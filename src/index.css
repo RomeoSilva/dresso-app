@@ -1,0 +1,220 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 215 30% 25%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 20% 55%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 350 30% 27%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 30% 25%;
+    --radius: 0.5rem;
+  }
+
+  .theme-elegant {
+    --font-family: "Playfair Display", "Merriweather", "Libre Baskerville", serif;
+    --primary: 215 30% 25%;
+    --secondary: 210 20% 55%;
+    --accent: 350 30% 27%;
+    --background: 0 0% 98%;
+    --text-primary: 215 30% 25%;
+    --text-secondary: 210 20% 55%;
+    @apply bg-[#E8EBEF];
+  }
+
+  .theme-sporty {
+    --font-family: "Montserrat", "Oswald", "Roboto Bold", sans-serif;
+    --primary: 215 30% 25%;
+    --secondary: 127 29% 45%;
+    --accent: 350 30% 27%;
+    --background: 0 0% 98%;
+    --text-primary: 215 30% 25%;
+    --text-secondary: 127 29% 45%;
+    @apply bg-[#E8EBEF];
+  }
+
+  .theme-boho {
+    --font-family: "Quicksand", "Dancing Script", "Pacifico", sans-serif;
+    --primary: 25 30% 40%;
+    --secondary: 35 25% 55%;
+    --accent: 15 30% 45%;
+    --background: 30 20% 96%;
+    --text-primary: 25 30% 40%;
+    --text-secondary: 35 25% 55%;
+    @apply bg-[#E8EBEF];
+  }
+
+  .theme-casual {
+    --font-family: "Nunito", "Open Sans", "Lato", sans-serif;
+    --primary: 215 30% 25%;
+    --secondary: 210 20% 55%;
+    --accent: 350 30% 27%;
+    --background: 0 0% 98%;
+    --text-primary: 215 30% 25%;
+    --text-secondary: 210 20% 55%;
+    @apply bg-[#E8EBEF];
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#E8EBEF] text-foreground font-semibold antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-family, 'Nunito', 'Open Sans', sans-serif);
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-[#111111] tracking-tight;
+  }
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  p {
+    @apply text-[#111111] font-semibold text-base md:text-lg;
+  }
+  
+  /* Mobile optimizations */
+  input, button, select, textarea {
+    @apply text-base;
+    font-size: 16px !important;
+  }
+  
+  /* Prevent text zoom on mobile */
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+  }
+  
+  /* Better touch targets */
+  button, a, input[type="button"], input[type="submit"] {
+    @apply min-h-[44px] min-w-[44px];
+    touch-action: manipulation;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8EBEF;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f8c8d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3e50;
+}
+
+/* Theme transitions */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Z-index hierarchy */
+.z-navigation {
+  z-index: 50;
+}
+
+.z-modal {
+  z-index: 100;
+}
+
+.z-dropdown {
+  z-index: 40;
+}
+
+.z-tooltip {
+  z-index: 60;
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply bg-[#2c3e50] text-white font-semibold rounded-lg shadow-md hover:bg-[#34495e] transition-all duration-300 min-h-[44px];
+}
+
+.btn-secondary {
+  @apply bg-white text-[#2c3e50] border border-[#2c3e50] font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 min-h-[44px];
+}
+
+/* Enhanced card styles */
+.card {
+  @apply bg-white rounded-xl shadow-md border border-gray-200 transition-all duration-300 hover:shadow-lg p-4 md:p-6;
+}
+
+/* Enhanced input styles */
+.input-enhanced {
+  @apply border-2 border-gray-200 rounded-lg focus:border-[#2c3e50] focus:ring-2 focus:ring-[#2c3e50]/20 transition-all duration-300 min-h-[44px] px-4;
+}
+
+/* Enhanced text styles */
+.text-enhanced {
+  @apply font-semibold tracking-wide text-[#111111] text-base md:text-lg;
+}
+
+/* Enhanced container styles */
+.container-enhanced {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Mobile-first spacing */
+.mobile-spacing {
+  @apply p-4 md:p-6;
+}
+
+/* Mobile-first grid */
+.mobile-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+}
+
+/* Mobile navigation adjustments */
+.mobile-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:relative md:border-t-0;
+}
+
+/* Mobile-friendly touch targets */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+}

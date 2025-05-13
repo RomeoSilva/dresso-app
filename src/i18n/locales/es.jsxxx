@@ -1,0 +1,36 @@
+
+export default {
+  welcome: {
+    title: "Asistente StyleAI",
+    slogan: "Descubre tu estilo con ayuda de la IA",
+    register: "Registrarse",
+    login: "Iniciar Sesión"
+  },
+  questionnaire: {
+    title: "Perfil de Estilo Personal",
+    skinTone: "¿Cuál es tu tono de piel?",
+    hairColor: "¿Cuál es tu color de pelo?",
+    height: "¿Cuánto mides?",
+    weight: "¿Cuánto pesas?",
+    stylePreference: "¿Qué estilo prefieres?",
+    occasions: "¿Para qué ocasiones te vistes?",
+    cm: "cm",
+    kg: "kg",
+    next: "Siguiente",
+    back: "Atrás"
+  },
+  wardrobe: {
+    title: "Mi Armario",
+    uploadNew: "Subir Nueva Prenda",
+    createOutfit: "Crear Nuevo Conjunto",
+    analyze: "Analizar Mi Estilo",
+    recommendations: "Obtener Recomendaciones"
+  },
+  common: {
+    save: "Guardar",
+    cancel: "Cancelar",
+    loading: "Cargando...",
+    error: "Algo salió mal",
+    success: "¡Éxito!"
+  }
+};
