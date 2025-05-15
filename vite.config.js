@@ -124,7 +124,11 @@ window.fetch = function(...args) {
 			return response;
 		})
 		.catch(error => {
+<<<<<<< HEAD
 			if (!url.match(/\.html?$/i)) {
+=======
+			if (!url.match(/\\.html?$/i)) {
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 				console.error(error);
 			}
 
@@ -153,7 +157,11 @@ const addTransformIndexHtml = {
 				},
 				{
 					tag: 'script',
+<<<<<<< HEAD
 					attrs: {type: 'module'},
+=======
+					attrs: { type: 'module' },
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 					children: configHorizonsConsoleErrroHandler,
 					injectTo: 'head',
 				},
@@ -170,16 +178,26 @@ const addTransformIndexHtml = {
 
 console.warn = () => {};
 
+<<<<<<< HEAD
 const logger = createLogger()
 const loggerError = logger.error
+=======
+const logger = createLogger();
+const loggerError = logger.error;
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 
 logger.error = (msg, options) => {
 	if (options?.error?.toString().includes('CssSyntaxError: [postcss]')) {
 		return;
 	}
+<<<<<<< HEAD
 
 	loggerError(msg, options);
 }
+=======
+	loggerError(msg, options);
+};
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 
 export default defineConfig({
 	customLogger: logger,
@@ -190,9 +208,17 @@ export default defineConfig({
 			'Cross-Origin-Embedder-Policy': 'credentialless',
 		},
 		allowedHosts: true,
+<<<<<<< HEAD
 	},
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+=======
+		host: '0.0.0.0',
+		port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
+	},
+	resolve: {
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},

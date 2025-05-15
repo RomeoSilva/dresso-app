@@ -3,7 +3,11 @@ import React from 'react';
 import { CLOTHING_TYPES } from './types';
 
 const GOOGLE_SHOPPING_API_KEY = 'AIzaSyBabZdKyDyDtG6C9q2D0jvtYClTs1sM-EA'; 
+<<<<<<< HEAD
 const SHOPPING_API_BASE_URL = 'http://localhost:3001/api/shopping';
+=======
+const SHOPPING_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+>>>>>>> 8488f7c9e55c7a895c6443d75dbe7c0246267e76
 const COUNTRY = 'ES';
 const MAX_RESULTS = 3; 
 
